@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class SliderManager : MonoBehaviour
+public class MenuButton : MonoBehaviour
 {
-    public List<Slider> sliders;
-    public MenuManager menuManager;
-
     void Start()
     {
+        // 非表示にする
+        gameObject.SetActive(false);
+
         EventTrigger trigger = GetComponent<EventTrigger>();
         EventTrigger.Entry entry = new EventTrigger.Entry();
 
@@ -22,18 +22,15 @@ public class SliderManager : MonoBehaviour
 
     private void OnClick(BaseEventData eventData)
     {
-        UnSelectAll();
     }
 
-    public void UnSelectAll()
+    public void Open()
     {
-        foreach (Slider slider in sliders) {
-            slider.UnSelect();
-        }
+        gameObject.SetActive(true);
     }
 
-    public void OnSelect()
+    public void Close()
     {
-        menuManager.Close();
+        gameObject.SetActive(false);
     }
 }

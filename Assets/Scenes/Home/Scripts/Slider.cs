@@ -13,14 +13,14 @@ public class Slider : MonoBehaviour
         EventTrigger trigger = GetComponent<EventTrigger>();
         EventTrigger.Entry entry = new EventTrigger.Entry();
 
-        // クリックされたときにOnClickedを呼び出す
+        // クリックされたときにOnClickを呼び出す
         entry.eventID = EventTriggerType.PointerClick;
-        entry.callback.AddListener(OnClicked);
+        entry.callback.AddListener(OnClick);
 
         trigger.triggers.Add(entry);
     }
 
-    private void OnClicked(BaseEventData eventData)
+    private void OnClick(BaseEventData eventData)
     {
         if (isSelected) return;
         sliderManager.UnSelectAll();
@@ -32,6 +32,7 @@ public class Slider : MonoBehaviour
         if (isSelected) return;
         isSelected = true;
         animator.Play("SlideIn");
+        sliderManager.OnSelect();
     }
 
     public void UnSelect()
