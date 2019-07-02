@@ -5,8 +5,12 @@ using UnityEngine.EventSystems;
 
 public class MenuButton : MonoBehaviour
 {
+    private Animator animator;
+
     void Start()
     {
+        animator = GetComponent<Animator>();
+
         // 非表示にする
         gameObject.SetActive(false);
 
@@ -27,9 +31,15 @@ public class MenuButton : MonoBehaviour
     public void Open()
     {
         gameObject.SetActive(true);
+        animator.Play(this.name + "In");
     }
 
     public void Close()
+    {
+       animator.Play(this.name + "Out");
+    }
+
+    public void SetActiveFalse()
     {
         gameObject.SetActive(false);
     }
