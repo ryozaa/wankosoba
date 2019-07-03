@@ -9,8 +9,6 @@ public class MenuButton : MonoBehaviour
 
     void Start()
     {
-        animator = GetComponent<Animator>();
-
         // 非表示にする
         gameObject.SetActive(false);
 
@@ -26,21 +24,6 @@ public class MenuButton : MonoBehaviour
 
     private void OnClick(BaseEventData eventData)
     {
-    }
-
-    public void Open()
-    {
-        gameObject.SetActive(true);
-        animator.Play(this.name + "In");
-    }
-
-    public void Close()
-    {
-       animator.Play(this.name + "Out");
-    }
-
-    public void SetActiveFalse()
-    {
-        gameObject.SetActive(false);
+        // 各画面に遷移する
     }
 }

@@ -8,12 +8,15 @@ public class MenuManager : MonoBehaviour
 {
     public Sprite openSprite;
     public Sprite closeSprite;
-    public List<MenuButton> menuButtons;
     public SliderManager sliderManager;
+    private Image image;
+    public Animator animator;
     private bool isOpen = false;
 
     void Start()
     {
+        image = GetComponent<Image>();
+
         EventTrigger trigger = GetComponent<EventTrigger>();
         EventTrigger.Entry entry = new EventTrigger.Entry();
 
@@ -33,26 +36,18 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    public void Open()
+    private void Open()
     {
-        if (isOpen) return;
         isOpen = true;
-
-        foreach (MenuButton menuButton in menuButtons) {
-            menuButton.Open();
-        }
-        GetComponent<Image>().sprite = closeSprite;
+        animator.Play("MenuIn");
+        image.sprite = closeSprite;
         sliderManager.UnSelectAll();
     }
 
     public void Close()
     {
-        if (!isOpen) return;
         isOpen = false;
-
-        foreach (MenuButton menuButton in menuButtons) {
-            menuButton.Close();
-        }
-        GetComponent<Image>().sprite = openSprite;
+        animator.Play("MenuOut");
+        image.sprite = openSprite;
     }
 }
