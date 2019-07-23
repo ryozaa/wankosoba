@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Calendar/Calendar.unity
+    guid: 61fd9f6f0c54f6b4584472ac3cf7b1a8
+  - enabled: 1
+    path: Assets/Scenes/Calendar/ScheduleAdd.unity
+    guid: 6c4c783fddf3f9a46a4399221b7e5dae
+  - enabled: 1
+    path: Assets/Scenes/Calendar/ScheduleDetail.unity
+    guid: c0957d33b7ef8b14eb736a951e5b37ac
+  - enabled: 1
+    path: Assets/Scenes/Calendar/ScheduleEdit.unity
+    guid: 94920b0210e7efb4daecb19987e57cdd
+  - enabled: 1
+    path: Assets/Scenes/Calendar/ScheduleList.unity
+    guid: 8c25dd77acb84a443b39738d2821a764
   m_configObjects: {}
