@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
+
 public class ListSceneManager : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -10,6 +12,7 @@ public class ListSceneManager : MonoBehaviour
     private GameObject[] greentags;
     void Start()
     {
+      //各タグのついてるオブジェクトをあらかじめロードする
       redtags = GameObject.FindGameObjectsWithTag("RedTag");
       bluetags = GameObject.FindGameObjectsWithTag("BlueTag");
       greentags = GameObject.FindGameObjectsWithTag("GreenTag");
@@ -20,6 +23,18 @@ public class ListSceneManager : MonoBehaviour
     {
 
     }
+
+
+    public void AddButtonClicked()
+    {
+      SceneManager.LoadScene("ToDoAdd");
+    }
+
+    public void EditButtonClicked()
+    {
+      SceneManager.LoadScene("ToDoEdit");
+    }
+
 
     public void RedTagToggle()
     {
