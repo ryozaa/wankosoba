@@ -15,6 +15,12 @@ public class WankoDB
         db.ExecuteNonQuery(query);
     }
 
+    public static DataTable FindAll(string table)
+    {
+        string query = $"select * from {table}";
+        return db.ExecuteQuery(query);
+    }
+
     public static DataTable FindBy(string table, string key, string value)
     {
         string query = $"select * from {table} where {key} = {value}";
