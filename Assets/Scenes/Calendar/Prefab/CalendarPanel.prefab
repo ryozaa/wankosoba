@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 8268684776169328350}
   - component: {fileID: 8268684776169328348}
   - component: {fileID: 8268684776169328349}
+  - component: {fileID: 9049062334177883648}
   - component: {fileID: 5793381620266253322}
   m_Layer: 0
   m_Name: CalendarPanel
@@ -155,6 +156,20 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &9049062334177883648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8268684776169328351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
+  delegates: []
 --- !u!114 &5793381620266253322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,4 +182,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e01515195fab90b419158c8bfacc5eea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Date: 
   Text: {fileID: 2065472327434148514}

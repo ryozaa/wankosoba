@@ -10,6 +10,7 @@ public class Calendar : MonoBehaviour
     public Button nextButton;
     public Text yearText;
     public Text monthText;
+    public static DateTime SelectedDate;
 
     public GameObject panel;
     private List<CalendarPanel> panelList = new List<CalendarPanel>();
@@ -71,21 +72,21 @@ public class Calendar : MonoBehaviour
             float alpha = 1f;
             // 今月の1日より前
             if (i <= dayOffset) {
-                panel.Datetime = new DateTime(prev.Year, prev.Month, prevMonthDay);
+                panel.Date = new DateTime(prev.Year, prev.Month, prevMonthDay);
                 panel.Text.text = prevMonthDay.ToString();
                 alpha = 0.3f;
                 prevMonthDay ++;
             }
             // 今月の最終日より後ろ
             else if (day > daysInMonth) {
-                panel.Datetime = new DateTime(next.Year, next.Month, nextMonthDay);
+                panel.Date = new DateTime(next.Year, next.Month, nextMonthDay);
                 panel.Text.text = nextMonthDay.ToString();
                 alpha = 0.3f;
                 nextMonthDay ++;
             }
             // 今月の日付
             else {
-                panel.Datetime = new DateTime(current.Year, current.Month, day);
+                panel.Date = new DateTime(current.Year, current.Month, day);
                 panel.Text.text = day.ToString();
                 day ++;
             }
