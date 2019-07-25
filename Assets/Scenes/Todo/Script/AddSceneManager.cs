@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class AddSceneManager : MonoBehaviour
 {
-  public Button Cancel;
-  public Button Add;
+  static int tagNum = 0;
   InputField inputField;
 
     // Start is called before the first frame update
@@ -37,10 +36,45 @@ public class AddSceneManager : MonoBehaviour
       inputField.ActivateInputField();
     }
 
+
+    public void ChangeToRedTag()
+    {
+      if(tagNum != 0){
+        tagNum = 0;
+        Debug.Log("Tag is Red." +tagNum);
+      }
+    }
+
+    public void ChangeToBlueTag()
+    {
+      if(tagNum != 1){
+        tagNum = 1;
+        Debug.Log("Tag is Blue." + tagNum);
+      }
+    }
+
+    public void ChangeToGreenTag()
+    {
+      if(tagNum != 2){
+        tagNum = 2;
+        Debug.Log("Tag is Green." + tagNum);
+      }
+    }
+
+    public　void ToDoTableControll(){
+      string title = inputField.text;
+      int tag = tagNum;
+      int status = 0;
+      TodoTable.Insert(title,tag,status);
+    }
+
+
     public void AddOnclick()
     {
+      //ToDoTableControll()
       Debug.Log("更新ボタン");
       SceneManager.LoadScene("TodoList");
+
     }
 
     public void CancelOnclick()
