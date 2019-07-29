@@ -33,6 +33,19 @@ public class WankoDB
         db.ExecuteNonQuery(query);
     }
 
+    public static void Update(string table, Dictionary<string,string> data, string key, string value)
+    {
+      var updateList = new List<string>();
+
+      foreach (keyValuePair<string,string> kvp in data){
+        //Console.WriteLine($"{kvp.key} = {kvp.value}");
+        updateList.Add($"{kvp.key} = {kvp.value}");
+      }
+      string updateStr = String.Join(",",updateList);
+      string query = "update {table} set {updateStr} where {key} = {value}";
+      return db.ExecuteQuery(query);
+    }
+
     public static DataTable ExecuteQuery(string query)
     {
         return db.ExecuteQuery(query);

@@ -32,7 +32,7 @@ public class AddSceneManager : MonoBehaviour
 
     public void InitInputField()
     {
-      //フォーカス(って何)
+      //使うインプットフィールドを有効にする
       inputField.ActivateInputField();
     }
 
@@ -41,7 +41,7 @@ public class AddSceneManager : MonoBehaviour
     {
       if(tagNum != 0){
         tagNum = 0;
-        Debug.Log("Tag is Red." +tagNum);
+        //Debug.Log("Tag is Red." +tagNum);
       }
     }
 
@@ -49,7 +49,7 @@ public class AddSceneManager : MonoBehaviour
     {
       if(tagNum != 1){
         tagNum = 1;
-        Debug.Log("Tag is Blue." + tagNum);
+        //Debug.Log("Tag is Blue." + tagNum);
       }
     }
 
@@ -57,24 +57,25 @@ public class AddSceneManager : MonoBehaviour
     {
       if(tagNum != 2){
         tagNum = 2;
-        Debug.Log("Tag is Green." + tagNum);
+        //Debug.Log("Tag is Green." + tagNum);
       }
-    }
-
-    public　void ToDoTableControll(){
-      string title = inputField.text;
-      int tag = tagNum;
-      int status = 0;
-      TodoTable.Insert(title,tag,status);
     }
 
 
     public void AddOnclick()
     {
-      //ToDoTableControll()
+      //ToDoTableControll();
       Debug.Log("更新ボタン");
       SceneManager.LoadScene("TodoList");
 
+    }
+
+    public　void ToDoTableControll(){
+      //入力をDBに書きこむ
+      string title = inputField.text;
+      int tag = tagNum;
+      int status = 0;
+      TodoTable.Insert(title,tag,status);
     }
 
     public void CancelOnclick()
