@@ -37,13 +37,13 @@ public class WankoDB
     {
       var updateList = new List<string>();
 
-      foreach (keyValuePair<string,string> kvp in data){
-        //Console.WriteLine($"{kvp.key} = {kvp.value}");
-        updateList.Add($"{kvp.key} = {kvp.value}");
+      foreach(KeyValuePair<string, string> kvp in data){
+        Console.WriteLine($"{kvp.Key} = {kvp.Value}");
+        updateList.Add($"{kvp.Key} = {kvp.Value}");
       }
       string updateStr = String.Join(",",updateList);
-      string query = "update {table} set {updateStr} where {key} = {value}";
-      return db.ExecuteQuery(query);
+      string query = $"update {table} set {updateStr} where {key} = {value}";
+      db.ExecuteNonQuery(query);
     }
 
     public static DataTable ExecuteQuery(string query)

@@ -24,7 +24,7 @@ public class TodoTable
 
     public static DataTable FindById(int id)
     {
-        return WankoDB.FindBy(table, "todo_id", id.Tosting());
+        return WankoDB.FindBy(table, "todo_id", id.ToString());
     }
 
     public static void DeleteById(int id)
@@ -34,16 +34,16 @@ public class TodoTable
 
     public static void UpdateToDo(string title, int tag, int id)
     {
-       var data = new Dictionary<string,string>();
+       var data = new Dictionary<string, string>();
        data.Add("title", $"'{title}'");
        data.Add("tag", tag.ToString());
-       WankoDB.Update(table, data, "todo_id", id.ToString();
+       WankoDB.Update(table, data, "todo_id", id.ToString());
     }
 
     public static void UpdateStatus(int status, int id)
     {
-      var data = new Dictionary<string,string>();
-      data.Add("status", status.Tostring());
+       var data = new Dictionary<string, string>();
+       data.Add("status", status.ToString());
        WankoDB.Update(table, data, "todo_id", id.ToString());
     }
 
