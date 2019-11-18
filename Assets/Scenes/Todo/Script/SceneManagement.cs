@@ -1,29 +1,22 @@
 
-
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class SceneManagement : MonoBehaviour
 {
-  public string name;
-
-  public void AddButtonClicked(){
-    SceneManager.LoadScene("ToDoAdd");
-  }
-
-  public void EditButtonClicked(){
-    SceneManager.LoadScene("ToDoEdit");
-  }
+  //public string name;
+  public Button addbutton;
+  public Button editbutton;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+      addbutton.onClick.AddListener(() => SceneManagement.LoadAddScene());
+      editbutton.onClick.AddListener(() => SceneManagement.LoadEditScene());
     }
 
     // Update is called once per frame
@@ -31,4 +24,16 @@ public class SceneManagement : MonoBehaviour
     {
 
     }
+
+
+      public static void LoadAddScene()
+      {
+        SceneManager.LoadScene("ToDoAdd");
+      }
+
+      public static void LoadEditScene()
+      {
+
+        SceneManager.LoadScene("ToDoEdit");
+      }
 }

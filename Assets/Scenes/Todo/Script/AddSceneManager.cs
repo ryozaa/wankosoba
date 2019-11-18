@@ -9,13 +9,14 @@ public class AddSceneManager : MonoBehaviour
   static int tagNum = 0;
   InputField inputField;
 
+  [SerializeField]
+   private GameObject inputFieldobj;
     // Start is called before the first frame update
     void Start()
     {
       //InputFieldコンポーネントの取得と初期化メソッドの実行
-      inputField = GetComponent<InputField>();
+      inputField = inputFieldobj.GetComponent<InputField>();
       InitInputField();
-
     }
     // Update is called once per frame
     void Update()
@@ -41,7 +42,6 @@ public class AddSceneManager : MonoBehaviour
     {
       if(tagNum != 0){
         tagNum = 0;
-        //Debug.Log("Tag is Red." +tagNum);
       }
     }
 
@@ -49,7 +49,6 @@ public class AddSceneManager : MonoBehaviour
     {
       if(tagNum != 1){
         tagNum = 1;
-        //Debug.Log("Tag is Blue." + tagNum);
       }
     }
 
@@ -57,15 +56,14 @@ public class AddSceneManager : MonoBehaviour
     {
       if(tagNum != 2){
         tagNum = 2;
-        //Debug.Log("Tag is Green." + tagNum);
       }
     }
 
 
     public void AddOnclick()
     {
-      //ToDoTableControll();
-      Debug.Log("更新ボタン");
+      ToDoTableControll(); //本番用接続
+      Debug.Log("追加ボタン");
       SceneManager.LoadScene("TodoList");
 
     }
