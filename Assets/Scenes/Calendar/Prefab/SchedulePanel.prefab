@@ -168,7 +168,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75a00ee90a951944e9571fc4c34f6197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Icon: {fileID: 5696715268871006183}
+  IconSpriteList:
+  - {fileID: 21300000, guid: 95ac46c18d955544fa14f4a868534c79, type: 3}
+  - {fileID: 21300000, guid: 790f07f49203b9644a48dde268b17ee3, type: 3}
+  - {fileID: 21300000, guid: 30e0330267e62f54b899b917000f5922, type: 3}
+  - {fileID: 21300000, guid: 7a76a8caa35ab3642b26c2da35ee855f, type: 3}
+  - {fileID: 21300000, guid: 21186a8c9cbee93418410658d15b1dc0, type: 3}
+  - {fileID: 21300000, guid: a6cdfb0ffb47aeb4a8496b6b8ab7cdf2, type: 3}
+  Icon: {fileID: 5696715268871006177}
   Text: {fileID: 5696715268336359922}
 --- !u!1 &5696715268871006177
 GameObject:

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class ScheduleAddPanel : MonoBehaviour, IPointerClickHandler
 {
@@ -10,6 +11,6 @@ public class ScheduleAddPanel : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("クリックされたよ。");
+        SceneManager.LoadScene("ScheduleAdd");
     }
 }

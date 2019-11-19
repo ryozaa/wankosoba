@@ -25,6 +25,11 @@ public class ScheduleTable
         return WankoDB.FindBy(table, "date", $"'{date}'");
     }
 
+    public static DataTable FindById(int id)
+    {
+        return WankoDB.FindBy(table, "schedule_id", id.ToString());
+    }
+
     public static void DeleteById(int id)
     {
         WankoDB.DeleteBy(table, "schedule_id", id.ToString());

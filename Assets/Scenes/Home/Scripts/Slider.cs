@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class Slider : MonoBehaviour
 {
     public SliderManager sliderManager;
+    public string sceneName;
     private Animator animator;
     private bool isSelected = false;
 
@@ -22,7 +24,10 @@ public class Slider : MonoBehaviour
 
     private void OnClick(BaseEventData eventData)
     {
-        if (isSelected) return;
+        if (isSelected) {
+            SceneManager.LoadScene(sceneName);
+            return;
+        }
         sliderManager.UnSelectAll();
         Select();
     }

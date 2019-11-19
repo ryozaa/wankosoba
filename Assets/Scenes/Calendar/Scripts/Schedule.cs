@@ -25,6 +25,7 @@ public class Schedule : MonoBehaviour
 
     public void LoadSchedule()
     {
+        Calendar.SelectedDate = current;
         YearText.text = current.ToString("yyyy年");
         MonthText.text = current.ToString("M月d日");
 
@@ -42,8 +43,8 @@ public class Schedule : MonoBehaviour
     {
         var clonePanel = (GameObject) Instantiate(SchedulePanel, new Vector2(), Quaternion.identity);
 
-        clonePanel.transform.Find("Text").GetComponent<Text>().text = (string) data["title"];
         clonePanel.transform.SetParent(transform);
+        clonePanel.GetComponent<SchedulePanel>().Init((int)data["schedule_id"], (int)data["icon"], (string)data["title"]);
 
         scheduleList.Add(clonePanel);
 
