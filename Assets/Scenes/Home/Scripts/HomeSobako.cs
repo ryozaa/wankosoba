@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using UnityEngine.Networking;
 
 // アニメーション一覧
 // 通常 しょぼん ねむい ルンルン 疑問 驚く
@@ -37,12 +39,46 @@ public class HomeSobako : MonoBehaviour
         textDict.Add("明日はなにをしようかな～？", "ルンルン");
 
         button.onClick.AddListener(onClick);
+
+        StartCoroutine(Test());
     }
 
     void onClick()
     {
-        int rand = Random.Range(0, textDict.Count);
+        int rand = UnityEngine.Random.Range(0, textDict.Count);
         text.text = textDict.Keys.ElementAt(rand);
         animator.Play(textDict.Values.ElementAt(rand));
+    }
+
+    private IEnumerator Test()
+    {
+        string url = "https://ja.wikipedia.org/w/api.php?action=query&format=json&formatversion=2&prop=extracts&exlimit=1&explaintext&titles=";
+        url += UnityWebRequest.EscapeURL(DateTime.Now.ToString("M月d日"));
+
+        UnityWebRequest request = UnityWebRequest.Get(url);
+        yield return request.SendWebRequest();
+
+        if (request.isNetworkError) {
+            Debug.Log(request.error);
+        }
+        else if (request.responseCode == 200) {
+            string data = request.downloadHandler.text;
+            int index = data.IndexOf("== 記念日・年中行事 ==");
+
+            if (index > 0) {
+                data = data.Substring(index + 16);
+
+                index = data.IndexOf("\\n\\n\\n==");
+                data = data.Substring(0, index);
+
+                foreach (string v in data.Split(new string[] { "\\n" }, System.StringSplitOptions.None)) {
+                    index = v.IndexOf("の日（ 日本）");
+                    if (index > 0) {
+                        string message = "今日は" + v.Substring(0, index + 2) + "ですよ！";
+                        textDict.Add(message, "得意げ");
+                    }
+                }
+            }
+        }
     }
 }

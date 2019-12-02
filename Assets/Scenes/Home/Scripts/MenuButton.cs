@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class MenuButton : MonoBehaviour
 {
+    public string sceneName;
     private Animator animator;
 
     void Start()
@@ -25,5 +27,6 @@ public class MenuButton : MonoBehaviour
     private void OnClick(BaseEventData eventData)
     {
         // 各画面に遷移する
+        SceneManager.LoadScene(sceneName);
     }
 }
