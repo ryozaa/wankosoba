@@ -13,6 +13,8 @@ public class ScheduleDetail : MonoBehaviour
     public Text Title;
     public Text Detail;
     public Text Remind;
+    public Image Image;
+    public List<Sprite> iconList;
 
     public Button BackButton;
     public Button EditButton;
@@ -20,7 +22,6 @@ public class ScheduleDetail : MonoBehaviour
 
     void Start()
     {
-        if (ScheduleId == 0) return;
         var result = ScheduleTable.FindById(ScheduleId);
         if (result.Rows.Count == 0) return;
         var data = result.Rows[0];
@@ -33,9 +34,17 @@ public class ScheduleDetail : MonoBehaviour
         Title.text = (string)data["title"];
         Detail.text = (string)data["detail"];
         Remind.text = (string)data["time"];
+        Image.sprite = iconList[icon];
 
         BackButton.onClick.AddListener(() => {
             SceneManager.LoadScene("ScheduleList");
+        });
+        EditButton.onClick.AddListener(() => {
+            SceneManager.LoadScene("ScheduleEdit");
+        });
+        DeleteButton.onClick.AddListener(() => {
+            ScheduleTable.DeleteById(ScheduleId);
+            SceneManager.LoadScene("SceduleList");
         });
     }
 }

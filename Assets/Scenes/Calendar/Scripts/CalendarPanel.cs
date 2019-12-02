@@ -10,6 +10,8 @@ public class CalendarPanel : MonoBehaviour
 {
     public DateTime Date;
     public Text Text;
+    public Image Image;
+    public GameObject CountPanel;
 
     void Start()
     {

@@ -13,6 +13,7 @@ public class Calendar : MonoBehaviour
     public static DateTime SelectedDate;
 
     public GameObject panel;
+    public List<Sprite> iconList;
     private List<CalendarPanel> panelList = new List<CalendarPanel>();
     private DateTime current;
 
@@ -93,6 +94,26 @@ public class Calendar : MonoBehaviour
 
             var col = panel.Text.color;
             panel.Text.color = new Color(col.r, col.g, col.b, alpha);
+
+            panel.Image.color = new Color(1f, 1f, 1f, 0f);
+            var countPanel = panel.CountPanel;
+            countPanel.SetActive(false);
+
+            // DBから予定を取得
+            var schedules = ScheduleTable.FindByDate(panel.Date.ToString("yyyy-MM-dd"));
+            var count = schedules.Rows.Count;
+            if (0 < count) {
+                int icon = (int) schedules.Rows[0]["icon"];
+                panel.Image.sprite = iconList[icon];
+                panel.Image.color = new Color(1f, 1f, 1f, 1f);
+
+                if (1 < count) {
+                    countPanel.SetActive(true);
+                    var text = countPanel.transform.Find("Text").GetComponent<Text>();
+                    text.text = count.ToString();
+                    if (9 < count) text.text = "9+";
+                }
+            }
         }
     }
 
