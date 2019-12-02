@@ -30,6 +30,18 @@ public class ScheduleTable
         return WankoDB.FindBy(table, "schedule_id", id.ToString());
     }
 
+    public static void Update(int id, string date, string title, string detail, int icon, int remind, string time) {
+        var data = new Dictionary<string, string>();
+        data.Add("date", $"'{date}'");
+        data.Add("title", $"'{title}'");
+        data.Add("detail", $"'{detail}'");
+        data.Add("icon", icon.ToString());
+        data.Add("remind", remind.ToString());
+        data.Add("time", $"'{time}'");
+
+        WankoDB.Update(table, data, "schedule_id", id.ToString());
+    }
+
     public static void DeleteById(int id)
     {
         WankoDB.DeleteBy(table, "schedule_id", id.ToString());
