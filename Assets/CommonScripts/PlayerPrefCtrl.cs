@@ -11,10 +11,9 @@ public class PlayerPrefCtrl : MonoBehaviour
     PlayerPrefs.Save();
   }
 
-  public static loadCoins()
+  public static int loadCoins()
   {
     int coins = PlayerPrefs.GetInt("COINS",0);
     return coins;
   }
-
 }

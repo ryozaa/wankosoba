@@ -8,10 +8,13 @@ public class Clothes : MonoBehaviour
 {
     public Detail detail;
     public Sprite sprite;
+    public Image lockIcon;
     public string type;
     public string spriteName;
+    public string spriteName2;
+    public bool isLock = true;
     private Button button;
-
+    
     void Start()
     {
         GetComponent<Image>().sprite = sprite;
@@ -20,14 +23,11 @@ public class Clothes : MonoBehaviour
     }
 
     void OnClick() {
-        detail.ChangeSprite(sprite);
-        switch (type) {
-            case "clothe":
-                detail.setClotheName(spriteName);
-                break;
-            case "hair":
-                detail.setHairName(spriteName);
-                break;
-        }
+        detail.SetClothe(this);
+    }
+
+    public void SetIsLock(bool state) {
+        isLock = state;
+        lockIcon.gameObject.SetActive(isLock);
     }
 }

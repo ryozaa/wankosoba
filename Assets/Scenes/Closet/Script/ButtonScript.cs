@@ -32,13 +32,13 @@ public class ButtonScript : MonoBehaviour
 
     public void ButtonOn(){
       isOn = true;
-      Debug.Log("オン");
+      // Debug.Log("オン");
       image.sprite = on;
     }
 
     public void ButtonOff(){
       isOn = false;
-      Debug.Log("オフ");
+      // Debug.Log("オフ");
       image.sprite = off;
     }
 }

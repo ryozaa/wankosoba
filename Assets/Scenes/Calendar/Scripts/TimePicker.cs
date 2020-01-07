@@ -70,4 +70,9 @@ public class TimePicker : MonoBehaviour
         }
         canvasGroup.interactable = flag;
     }
+
+    override public string ToString()
+    {
+        return String.Format("{0}:{1:00}", hour, minute);
+    }
 }
