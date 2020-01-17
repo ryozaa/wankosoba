@@ -6,20 +6,31 @@ using UnityEngine.EventSystems;
 
 public class Clothes : MonoBehaviour
 {
+    private string key;
     public Detail detail;
     public Sprite sprite;
+    public Image image;
     public Image lockIcon;
     public string type;
     public string spriteName;
     public string spriteName2;
     public bool isLock = true;
+    public int price;
+    public string desc;
     private Button button;
     
     void Start()
     {
-        GetComponent<Image>().sprite = sprite;
+        image.sprite = sprite;
         button = GetComponent<Button>();
         button.onClick.AddListener(OnClick);
+
+        key = sprite.name;
+        SetIsLock(PlayerPrefs.GetInt(key, 0) == 0);
+
+        if (key.Substring(key.Length-2, 2) == "_1") {
+            SetIsLock(false);
+        }
     }
 
     void OnClick() {
@@ -29,5 +40,8 @@ public class Clothes : MonoBehaviour
     public void SetIsLock(bool state) {
         isLock = state;
         lockIcon.gameObject.SetActive(isLock);
+
+        PlayerPrefs.SetInt(key, isLock? 0 : 1);
+        PlayerPrefs.Save();
     }
 }

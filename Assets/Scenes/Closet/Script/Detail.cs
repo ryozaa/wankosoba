@@ -9,22 +9,20 @@ public class Detail : MonoBehaviour
     public Button button;
     public ClosetSobako sobako;
     public Image background;
-
-    private string type;
-    private string key1;
-    private string key2;
-    private bool isPurchased;
     private Clothes clothe = null;
     private Text buttonText;
+    private Text descText;
     
     void Start() {
         button.onClick.AddListener(OnClickButton);
         buttonText = button.transform.Find("Text").GetComponent<Text>();
+        descText = transform.Find("Desc").GetComponent<Text>();
     }
 
     public void SetClothe(Clothes clothe) {
         this.clothe = clothe;
         image.sprite = clothe.sprite;
+        descText.text = clothe.desc;
         UpdateButton();
     }
 
@@ -33,7 +31,6 @@ public class Detail : MonoBehaviour
 
         if (clothe.isLock) {
             clothe.SetIsLock(false);
-            UpdateButton();
             return;
         }
 
@@ -60,7 +57,7 @@ public class Detail : MonoBehaviour
 
         string text = "";
         if (clothe.isLock) {
-            text = "購入";
+            text = $"購入\n￥{clothe.price}";
         } else {
             text = "きせかえ";
         }
