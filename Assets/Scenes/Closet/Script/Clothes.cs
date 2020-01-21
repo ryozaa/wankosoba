@@ -18,7 +18,8 @@ public class Clothes : MonoBehaviour
     public int price;
     public string desc;
     private Button button;
-    
+    public bool reset = false;
+
     void Start()
     {
         image.sprite = sprite;
@@ -30,6 +31,9 @@ public class Clothes : MonoBehaviour
 
         if (key.Substring(key.Length-2, 2) == "_1") {
             SetIsLock(false);
+        }
+        else if (reset) {
+            SetIsLock(true);
         }
     }
 

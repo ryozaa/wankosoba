@@ -11,6 +11,8 @@ using Live2D.Cubism.Rendering;
 
 public class ClosetSobako : MonoBehaviour
 {
+    public float posX;
+    public float posY;
     private CubismModel model;
     private static string rightEyeColor = "green";
     private static string leftEyeColor = "green";
@@ -93,6 +95,13 @@ public class ClosetSobako : MonoBehaviour
         motionList = new List<string>(){
             "笑顔1", "笑顔2", "笑顔3", "照れる1", "驚く", "ルンルン", "照れ困", "得意げ"
         };
+
+        Invoke("move", 0.2f);
+    }
+
+    private void move()
+    {
+        transform.position = new Vector3(posX, posY, 0);
     }
 
     public void setRightEyeColor(string color)

@@ -15,7 +15,7 @@ public class Calendar : MonoBehaviour
     public GameObject panel;
     public List<Sprite> iconList;
     private List<CalendarPanel> panelList = new List<CalendarPanel>();
-    private DateTime current;
+    public static DateTime current = DateTime.Now;
 
     void Start()
     {
@@ -26,7 +26,7 @@ public class Calendar : MonoBehaviour
         Vector2 parentPos = transform.position;
         for (int y = 0; y < 6; y++) {
             for (int x = 0; x < 7; x++) {
-                Vector2 pos = new Vector2(parentPos.x + panelWidth * x, parentPos.y - panelHeight * y);
+                Vector2 pos = new Vector2(-450 + panelWidth * x, 450 - panelHeight * y);
                 GameObject clonePanel = (GameObject)Instantiate(panel, pos, Quaternion.identity);
 
                 Text panelText = clonePanel.transform.Find("Text").GetComponent<Text>();
@@ -40,17 +40,16 @@ public class Calendar : MonoBehaviour
                 }
 
                 panelList.Add(clonePanel.GetComponent<CalendarPanel>());
-                clonePanel.transform.SetParent(transform);
+                clonePanel.transform.SetParent(transform, false);
             }
         }
 
         // カレンダーをセット
-        current = DateTime.Now;
         SetCalendar();
 
         prevButton.onClick.AddListener(Prev);
         nextButton.onClick.AddListener(Next);
-  }
+    }
 
     private void SetCalendar()
     {
@@ -94,8 +93,8 @@ public class Calendar : MonoBehaviour
 
             var col = panel.Text.color;
             panel.Text.color = new Color(col.r, col.g, col.b, alpha);
+            panel.Image.sprite = null;
 
-            panel.Image.color = new Color(1f, 1f, 1f, 0f);
             var countPanel = panel.CountPanel;
             countPanel.SetActive(false);
 
@@ -105,7 +104,7 @@ public class Calendar : MonoBehaviour
             if (0 < count) {
                 int icon = (int) schedules.Rows[0]["icon"];
                 panel.Image.sprite = iconList[icon];
-                panel.Image.color = new Color(1f, 1f, 1f, 1f);
+                panel.Image.color = new Color(1f, 1f, 1f, alpha);
 
                 if (1 < count) {
                     countPanel.SetActive(true);

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Schedule : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Schedule : MonoBehaviour
     public Text MonthText;
     public Button PrevButton;
     public Button NextButton;
+    public Button BackButton;
     private DateTime current;
     private List<GameObject> scheduleList = new List<GameObject>();
 
@@ -20,6 +22,7 @@ public class Schedule : MonoBehaviour
         current = Calendar.SelectedDate;
         PrevButton.onClick.AddListener(Prev);
         NextButton.onClick.AddListener(Next);
+        BackButton.onClick.AddListener(() => SceneManager.LoadScene("Calendar"));
         LoadSchedule();
     }
 
@@ -43,7 +46,7 @@ public class Schedule : MonoBehaviour
     {
         var clonePanel = (GameObject) Instantiate(SchedulePanel, new Vector2(), Quaternion.identity);
 
-        clonePanel.transform.SetParent(transform);
+        clonePanel.transform.SetParent(transform, false);
         clonePanel.GetComponent<SchedulePanel>().Init((int)data["schedule_id"], (int)data["icon"], (string)data["title"]);
 
         scheduleList.Add(clonePanel);

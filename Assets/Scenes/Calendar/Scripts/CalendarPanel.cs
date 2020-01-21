@@ -23,6 +23,8 @@ public class CalendarPanel : MonoBehaviour
         entry.callback.AddListener(OnClick);
 
         trigger.triggers.Add(entry);
+
+        transform.localScale = new Vector3(1, 1, 1);
     }
 
     private void OnClick(BaseEventData eventData)
