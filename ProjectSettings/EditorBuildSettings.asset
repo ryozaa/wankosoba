@@ -47,4 +47,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Games/SobaShooting/SobaShooting.unity
     guid: 86aae847bd2b07c4cbe4149c835932ce
+  - enabled: 1
+    path: Assets/Games/BlockBreak/Scenes/BBTitle.unity
+    guid: 3ab774c8aa608224f85bbfaf1905d9c6
+  - enabled: 1
+    path: Assets/Games/BlockBreak/Scenes/BBGameScene.unity
+    guid: a1174bf809bcf47468aaa3fce7c9cedf
+  - enabled: 1
+    path: Assets/Games/BlockBreak/Scenes/BBGameOver.unity
+    guid: 7f6e364f91f10a242b05db6c5f78c519
   m_configObjects: {}

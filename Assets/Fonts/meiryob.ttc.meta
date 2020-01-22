@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9824102b217d5a244b859a718fab51de
+guid: 4054e907b150e044b93875a9f844888f
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -11,7 +11,8 @@ TrueTypeFontImporter:
   fontName: Meiryo
   fontNames:
   - Meiryo
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 28e078aec481da7428d7b2fad2c002f3, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

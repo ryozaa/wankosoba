@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Todocell
   - RedTag
+  - Item
+  - Ball
+  - Block01
   layers:
   - Default
   - TransparentFX
