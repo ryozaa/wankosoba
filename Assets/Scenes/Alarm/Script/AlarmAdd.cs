@@ -49,5 +49,6 @@ public class AlarmAdd : MonoBehaviour
         int sun = (CheckboxList[6].isOn) ? 1 : 0;
 
         AlarmTable.Insert(time, snooze, sun, mon, tue, wed, thu, fri, sat);
+        SceneManager.LoadScene("AlarmList");
     }
 }

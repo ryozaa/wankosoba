@@ -13,7 +13,7 @@ public class AlarmList : MonoBehaviour
         foreach (var data in result.Rows) {
             var panel = Instantiate(AlarmPanel);
             panel.GetComponent<AlarmPanel>().Init((int)data["alarm_id"], (string)data["time"], (int)data["status"] == 1);
-            panel.transform.SetParent(transform);
+            panel.transform.SetParent(transform, false);
         }
         AddPanel.transform.SetAsLastSibling();
     }

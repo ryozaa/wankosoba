@@ -17,6 +17,7 @@ public class Detail : MonoBehaviour
         button.onClick.AddListener(OnClickButton);
         buttonText = button.transform.Find("Text").GetComponent<Text>();
         descText = transform.Find("Desc").GetComponent<Text>();
+        if (HomeBG.sprite != null) background.sprite = HomeBG.sprite;
         SetClothe(clothe);
     }
 
@@ -47,6 +48,7 @@ public class Detail : MonoBehaviour
                 break;
             case "background":
                 background.sprite = image.sprite;
+                HomeBG.sprite = image.sprite;
                 break;
         }
         sobako.Action();

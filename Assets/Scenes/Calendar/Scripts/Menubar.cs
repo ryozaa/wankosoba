@@ -14,8 +14,8 @@ public class Menubar : MonoBehaviour
     void Start()
     {
         homeButton.onClick.AddListener(() => SceneManager.LoadScene("Home"));
-        alarmButton.onClick.AddListener(() => SceneManager.LoadScene("Alarm"));
+        alarmButton.onClick.AddListener(() => SceneManager.LoadScene("AlarmList"));
         calendarButton.onClick.AddListener(() => SceneManager.LoadScene("Calendar"));
-        todoButton.onClick.AddListener(() => SceneManager.LoadScene("Todo"));
+        todoButton.onClick.AddListener(() => SceneManager.LoadScene("TodoList"));
     }
 }

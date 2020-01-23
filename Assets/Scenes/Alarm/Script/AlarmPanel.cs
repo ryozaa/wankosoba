@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class AlarmPanel : MonoBehaviour
 {
     public Text TimeText;
-    public Button EditButton;
+    public Button DeleteButton;
     public Button ToggleButton;
     public Sprite OnSprite;
     public Sprite OffSprite;
@@ -16,6 +17,7 @@ public class AlarmPanel : MonoBehaviour
 
     void Start() {
         ToggleButton.onClick.AddListener(toggle);
+        DeleteButton.onClick.AddListener(delete);
     }
 
     public void Init(int id, string time, bool state) {
@@ -37,5 +39,11 @@ public class AlarmPanel : MonoBehaviour
             sprite = OffSprite;
         }
         this.ToggleButton.targetGraphic.GetComponent<Image>().sprite = sprite;
+    }
+
+    private void delete()
+    {
+        AlarmTable.DeleteById(id);
+        Destroy(gameObject);
     }
 }
