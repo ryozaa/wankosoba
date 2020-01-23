@@ -18,6 +18,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Todo/TodoList.unity
     guid: 25a8c595c4f8e82438d10bd372f6b499
   - enabled: 1
+    path: Assets/Scenes/Alarm/AlarmList.unity
+    guid: 508a7543724972d48a4c7b547bdad7c0
+  - enabled: 1
+    path: Assets/Scenes/Alarm/AlarmAdd.unity
+    guid: 0d9666ebaddfd3047837be1e526885ae
+  - enabled: 1
+    path: Assets/Scenes/Alarm/AlarmEdit.unity
+    guid: b70efe64341f7d2499b157ae8204508a
+  - enabled: 1
     path: Assets/Scenes/Calendar/Calendar.unity
     guid: 61fd9f6f0c54f6b4584472ac3cf7b1a8
   - enabled: 1

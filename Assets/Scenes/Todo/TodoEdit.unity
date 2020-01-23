@@ -694,6 +694,33 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7570428325678023401, guid: 9fea3a0f4a8534f478a4a1b8f941b2d1,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570428325678023401, guid: 9fea3a0f4a8534f478a4a1b8f941b2d1,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570428325678023401, guid: 9fea3a0f4a8534f478a4a1b8f941b2d1,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570428325388905142, guid: 9fea3a0f4a8534f478a4a1b8f941b2d1,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 558d305deee882f4aafcc55e6d262902,
+        type: 3}
+    - target: {fileID: 7570428325813329087, guid: 9fea3a0f4a8534f478a4a1b8f941b2d1,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 558d305deee882f4aafcc55e6d262902,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fea3a0f4a8534f478a4a1b8f941b2d1, type: 3}
 --- !u!1 &1763938966 stripped

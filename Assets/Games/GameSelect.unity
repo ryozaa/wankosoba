@@ -288,7 +288,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 09bbccc4a3a9eca42aa0fc441590b6a3, type: 3}
+    m_Font: {fileID: 12800000, guid: 558d305deee882f4aafcc55e6d262902, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -300,7 +300,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30D6\u30ED\u30C3\u30AF\u304F\u305A\u3057"
+  m_Text: "\u304A\u3044\u3082\u53CE\u7A6B"
 --- !u!222 &106080192
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -461,6 +461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backButton: {fileID: 1594494791}
   shootingButton: {fileID: 52984397}
+  blockButton: {fileID: 1369851183}
 --- !u!114 &327641140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -490,10 +491,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -602,7 +603,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 09bbccc4a3a9eca42aa0fc441590b6a3, type: 3}
+    m_Font: {fileID: 12800000, guid: 558d305deee882f4aafcc55e6d262902, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -614,7 +615,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u304A\u3044\u3082\u53CE\u7A6B"
+  m_Text: "\u30D6\u30ED\u30C3\u30AF\u5D29\u3057"
 --- !u!222 &608820717
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -681,7 +682,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 09bbccc4a3a9eca42aa0fc441590b6a3, type: 3}
+    m_Font: {fileID: 12800000, guid: 558d305deee882f4aafcc55e6d262902, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
