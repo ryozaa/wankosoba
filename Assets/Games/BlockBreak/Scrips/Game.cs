@@ -21,6 +21,13 @@ public class Game : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI scoreText_;
 
+        private static Transform Balls;
+        [SerializeField]
+        private Transform Balls_;
+        private static GameObject SubBallprefab;
+        [SerializeField]
+        private GameObject SubBallprefab_;
+
     //アイテムのprefab達を格納場所とprefab
     [SerializeField]
     private Transform items_;
@@ -38,6 +45,13 @@ public class Game : MonoBehaviour
 
 
     void Start(){
+
+      if(Balls == null){
+        Balls = Balls_;
+      }
+      if(SubBallprefab == null){
+         SubBallprefab = SubBallprefab_;
+      }
       //ブロック配置処理
       BlockSet();
 
@@ -170,5 +184,9 @@ public class Game : MonoBehaviour
         }
     }
 
+    public static void SpownSubBall(){
+      var subBall = Instantiate<GameObject>(SubBallprefab,Balls);
+
+    }
 
   }

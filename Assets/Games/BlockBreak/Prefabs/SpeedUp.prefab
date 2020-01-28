@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4899348857227495665}
   - component: {fileID: 2481597887276929777}
   - component: {fileID: 8970331281134693048}
-  m_Layer: 12
+  m_Layer: 11
   m_Name: SpeedUp
   m_TagString: Item
   m_Icon: {fileID: 0}

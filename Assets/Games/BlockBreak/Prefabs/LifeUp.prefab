@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 418445730881134558}
   - component: {fileID: 4445133891290412503}
   - component: {fileID: 4177367910919403528}
-  m_Layer: 12
+  m_Layer: 11
   m_Name: LifeUp
   m_TagString: Item
   m_Icon: {fileID: 0}

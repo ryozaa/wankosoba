@@ -18,12 +18,12 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - ball
+  - Block
+  - Bar
+  - Item
+  - Wall
+  - SubBall
   - 
   - 
   - 

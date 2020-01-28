@@ -11,5 +11,6 @@ public class Field : MonoBehaviour
       //今のシーンを終わらせてgameシーンを読み込む
       var game = GetComponentInParent<Game>();
       game.Miss();
+
     }
 }
