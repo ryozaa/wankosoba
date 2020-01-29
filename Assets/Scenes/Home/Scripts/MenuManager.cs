@@ -46,6 +46,7 @@ public class MenuManager : MonoBehaviour
 
     public void Close()
     {
+        if (isOpen == false) return; 
         isOpen = false;
         animator.Play("MenuOut");
         image.sprite = openSprite;

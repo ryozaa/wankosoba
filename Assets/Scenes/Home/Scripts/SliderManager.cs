@@ -23,6 +23,7 @@ public class SliderManager : MonoBehaviour
     private void OnClick(BaseEventData eventData)
     {
         UnSelectAll();
+        menuManager.Close();
     }
 
     public void UnSelectAll()

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class AlarmPanel : MonoBehaviour
 {
     public Text TimeText;
-    public Button DeleteButton;
+    public Button EditButton;
     public Button ToggleButton;
     public Sprite OnSprite;
     public Sprite OffSprite;
@@ -17,7 +17,7 @@ public class AlarmPanel : MonoBehaviour
 
     void Start() {
         ToggleButton.onClick.AddListener(toggle);
-        DeleteButton.onClick.AddListener(delete);
+        EditButton.onClick.AddListener(edit);
     }
 
     public void Init(int id, string time, bool state) {
@@ -41,9 +41,9 @@ public class AlarmPanel : MonoBehaviour
         this.ToggleButton.targetGraphic.GetComponent<Image>().sprite = sprite;
     }
 
-    private void delete()
+    private void edit()
     {
-        AlarmTable.DeleteById(id);
-        Destroy(gameObject);
+        AlarmEdit.id = id;
+        SceneManager.LoadScene("AlarmEdit");
     }
 }

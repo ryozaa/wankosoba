@@ -30,11 +30,11 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - bullet
+  - enemy
+  - player
+  - effect
+  - enemyBullet
   - 
   - 
   - 

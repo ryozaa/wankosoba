@@ -164,6 +164,8 @@ public class ClosetSobako : MonoBehaviour
 
     public void Action()
     {
-        animator.Play(motionList[Random.Range(0, motionList.Count)]);
+        var anim = motionList[Random.Range(0, motionList.Count)];
+        Debug.Log(anim);
+        animator.Play(anim);
     }
 }

@@ -44,7 +44,7 @@ public class ScheduleDetail : MonoBehaviour
         });
         DeleteButton.onClick.AddListener(() => {
             ScheduleTable.DeleteById(ScheduleId);
-            SceneManager.LoadScene("SceduleList");
+            SceneManager.LoadScene("ScheduleList");
         });
     }
 }

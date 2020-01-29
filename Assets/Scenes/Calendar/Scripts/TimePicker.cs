@@ -54,7 +54,7 @@ public class TimePicker : MonoBehaviour
         display();
     }
 
-    private void display()
+    public void display()
     {
         HourText.text = hour.ToString();
         MinuteText.text = String.Format("{0:00}", minute);

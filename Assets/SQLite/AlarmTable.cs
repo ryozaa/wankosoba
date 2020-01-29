@@ -15,14 +15,32 @@ public class AlarmTable
         data.Add("status", "1");
         data.Add("snooze", snooze.ToString());
         data.Add("repeat_sun", sun.ToString());
-        data.Add("repeat_mon", sun.ToString());
-        data.Add("repeat_tue", sun.ToString());
-        data.Add("repeat_wed", sun.ToString());
-        data.Add("repeat_thu", sun.ToString());
-        data.Add("repeat_fri", sun.ToString());
-        data.Add("repeat_sat", sun.ToString());
+        data.Add("repeat_mon", mon.ToString());
+        data.Add("repeat_tue", tue.ToString());
+        data.Add("repeat_wed", wed.ToString());
+        data.Add("repeat_thu", thu.ToString());
+        data.Add("repeat_fri", fri.ToString());
+        data.Add("repeat_sat", sat.ToString());
 
         WankoDB.Insert(table, data);
+    }
+
+    public static void Update(int id, string time, int snooze,
+        int sun, int mon, int tue, int wed, int thu, int fri, int sat)
+    {
+        var data = new Dictionary<string, string>();
+        data.Add("time", $"'{time}'");
+        data.Add("status", "1");
+        data.Add("snooze", snooze.ToString());
+        data.Add("repeat_sun", sun.ToString());
+        data.Add("repeat_mon", mon.ToString());
+        data.Add("repeat_tue", tue.ToString());
+        data.Add("repeat_wed", wed.ToString());
+        data.Add("repeat_thu", thu.ToString());
+        data.Add("repeat_fri", fri.ToString());
+        data.Add("repeat_sat", sat.ToString());
+
+        WankoDB.Update(table, data, "alarm_id", id.ToString());
     }
 
     public static DataTable FindAll()

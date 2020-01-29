@@ -14,6 +14,9 @@ public class HomeSobako : MonoBehaviour
 {
     public Button button;
     public Text text;
+    public SliderManager sliderManager;
+    public MenuManager menuManager;
+    public Animator frameAnimator;
     private Animator animator;
     private Dictionary<string, string> textDict;
 
@@ -38,13 +41,16 @@ public class HomeSobako : MonoBehaviour
         textDict.Add("ええと、今日の予定はっと……", "ねむい");
         textDict.Add("明日はなにをしようかな～？", "ルンルン");
 
-        button.onClick.AddListener(onClick);
-
         StartCoroutine(Test());
     }
 
-    void onClick()
+    public void OnMouseDown() 
     {
+        sliderManager.UnSelectAll();
+        menuManager.Close();
+
+        frameAnimator.Play("Frame", -1, 0);
+        
         int rand = UnityEngine.Random.Range(0, textDict.Count);
         text.text = textDict.Keys.ElementAt(rand);
         animator.Play(textDict.Values.ElementAt(rand));

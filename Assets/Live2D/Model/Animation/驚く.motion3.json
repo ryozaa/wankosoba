@@ -5,9 +5,9 @@
 		"Fps": 30.0,
 		"Loop": true,
 		"AreBeziersRestricted": true,
-		"CurveCount": 42,
-		"TotalSegmentCount": 74,
-		"TotalPointCount": 180,
+		"CurveCount": 30,
+		"TotalSegmentCount": 62,
+		"TotalPointCount": 156,
 		"UserDataCount": 0,
 		"TotalUserDataSize": 0
 	},
@@ -564,138 +564,6 @@
 				0,
 				2,
 				-0.2
-			]
-		},
-		{
-			"Target": "PartOpacity",
-			"Id": "Part",
-			"Segments": [
-				0,
-				1,
-				0,
-				2,
-				1
-			]
-		},
-		{
-			"Target": "PartOpacity",
-			"Id": "Part5",
-			"Segments": [
-				0,
-				1,
-				0,
-				2,
-				1
-			]
-		},
-		{
-			"Target": "PartOpacity",
-			"Id": "Part2",
-			"Segments": [
-				0,
-				1,
-				0,
-				2,
-				1
-			]
-		},
-		{
-			"Target": "PartOpacity",
-			"Id": "Part8",
-			"Segments": [
-				0,
-				1,
-				0,
-				2,
-				1
-			]
-		},
-		{
-			"Target": "PartOpacity",
-			"Id": "Part9",
-			"Segments": [
-				0,
-				1,
-				0,
-				2,
-				1
-			]
-		},
-		{
-			"Target": "PartOpacity",
-			"Id": "Part3",
-			"Segments": [
-				0,
-				1,
-				0,
-				2,
-				1
-			]
-		},
-		{
-			"Target": "PartOpacity",
-			"Id": "Part12",
-			"Segments": [
-				0,
-				1,
-				0,
-				2,
-				1
-			]
-		},
-		{
-			"Target": "PartOpacity",
-			"Id": "Part13",
-			"Segments": [
-				0,
-				1,
-				0,
-				2,
-				1
-			]
-		},
-		{
-			"Target": "PartOpacity",
-			"Id": "Part7",
-			"Segments": [
-				0,
-				0,
-				0,
-				2,
-				0
-			]
-		},
-		{
-			"Target": "PartOpacity",
-			"Id": "Part10",
-			"Segments": [
-				0,
-				1,
-				0,
-				2,
-				1
-			]
-		},
-		{
-			"Target": "PartOpacity",
-			"Id": "Part22",
-			"Segments": [
-				0,
-				0,
-				0,
-				2,
-				0
-			]
-		},
-		{
-			"Target": "PartOpacity",
-			"Id": "Part14",
-			"Segments": [
-				0,
-				1,
-				0,
-				2,
-				1
 			]
 		}
 	]
