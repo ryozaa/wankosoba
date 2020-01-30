@@ -22,14 +22,14 @@ public class Result : MonoBehaviour
     // Start is called before the first frame update
     void Start(){
 
-      coin = Game.Score/1000;
+      coin = Game.Score/10000;
       //
       // for(count = 0; count > gameScore; count++){
       //   scoreCount();
       // }
        scoreText_.GetComponent<TextMeshProUGUI>().text = Game.Score.ToString();
-      // stageLvText_.GetComponent<TextMeshProUGUI>().text = Game.StageLv.ToString();
-      // coinText_.GetComponent<TextMeshProUGUI>().text = coin.ToString();
+       stageLvText_.GetComponent<TextMeshProUGUI>().text = Game.StageLv.ToString();
+       coinText_.GetComponent<TextMeshProUGUI>().text = coin.ToString();
 
     }
 
