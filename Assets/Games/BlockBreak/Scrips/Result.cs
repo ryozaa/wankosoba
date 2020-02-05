@@ -16,24 +16,33 @@ public class Result : MonoBehaviour
   [SerializeField]
   private GameObject coinText_;
 
-  private int coin;
-  int gameScore = 1000;
+  [SerializeField]
+  private Button RetryButton;
+  [SerializeField]
+  private Button TitleButton;
+
+  //private int coin;
+  //int gameScore = 1000;
   int count = 0;
     // Start is called before the first frame update
-    void Start(){
+    public void Start(){
 
-      coin = Game.Score/10000;
+      int coin = Game.Score/1000;
+      Debug.Log(coin);
+      int stageLv = Game.StageLv + 1;
       //
       // for(count = 0; count > gameScore; count++){
       //   scoreCount();
       // }
        scoreText_.GetComponent<TextMeshProUGUI>().text = Game.Score.ToString();
-       stageLvText_.GetComponent<TextMeshProUGUI>().text = Game.StageLv.ToString();
+       stageLvText_.GetComponent<TextMeshProUGUI>().text = stageLv.ToString();
        coinText_.GetComponent<TextMeshProUGUI>().text = coin.ToString();
 
+       RetryButton.onClick.AddListener(Retry);
+       TitleButton.onClick.AddListener(ToTitle);
     }
 
-    void scoreCount(){
+    public void scoreCount(){
 
         Debug.Log(count);
         scoreText_.GetComponent<TextMeshProUGUI>().text = count.ToString();
@@ -43,6 +52,13 @@ public class Result : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void ToTitle(){
+      SceneManager.LoadScene("BBTitleScene");
+    }
+    public void Retry(){
+      SceneManager.LoadScene("BBGameScene");
     }
 
 

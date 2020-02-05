@@ -1269,6 +1269,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8815785208937304660}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &731916597 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 813531044230304053, guid: 57f8362a1af2f624ca788abe17833185,
+    type: 3}
+  m_PrefabInstance: {fileID: 8815785208937304660}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &754157815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1477,6 +1489,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785612278}
   m_CullTransparentMesh: 0
+--- !u!114 &865395297 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3673262697300198049, guid: 57f8362a1af2f624ca788abe17833185,
+    type: 3}
+  m_PrefabInstance: {fileID: 8815785208937304660}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &902965835
 GameObject:
   m_ObjectHideFlags: 0
@@ -2999,6 +3023,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2059979711 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2615298293245944319, guid: 57f8362a1af2f624ca788abe17833185,
+    type: 3}
+  m_PrefabInstance: {fileID: 8815785208937304660}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2085175507
 GameObject:
   m_ObjectHideFlags: 0
@@ -3271,5 +3307,20 @@ PrefabInstance:
       propertyPath: m_ReferenceResolution.y
       value: 1920
       objectReference: {fileID: 0}
+    - target: {fileID: 7564010981483341659, guid: 57f8362a1af2f624ca788abe17833185,
+        type: 3}
+      propertyPath: alarmButton
+      value: 
+      objectReference: {fileID: 2059979711}
+    - target: {fileID: 7564010981483341659, guid: 57f8362a1af2f624ca788abe17833185,
+        type: 3}
+      propertyPath: calendarButton
+      value: 
+      objectReference: {fileID: 865395297}
+    - target: {fileID: 7564010981483341659, guid: 57f8362a1af2f624ca788abe17833185,
+        type: 3}
+      propertyPath: todoButton
+      value: 
+      objectReference: {fileID: 731916597}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57f8362a1af2f624ca788abe17833185, type: 3}

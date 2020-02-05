@@ -21,12 +21,15 @@ public class Game : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI scoreText_;
 
-        private static Transform Balls;
-        [SerializeField]
-        private Transform Balls_;
-        private static GameObject SubBallprefab;
-        [SerializeField]
-        private GameObject SubBallprefab_;
+    private static Transform Balls;
+    [SerializeField]
+    private Transform Balls_;
+    private static GameObject SubBallprefab;
+    [SerializeField]
+    private GameObject SubBallprefab_;
+
+    [SerializeField]
+    private GameObject BarObj_;
 
     //アイテムのprefab達を格納場所とprefab
     [SerializeField]
@@ -40,6 +43,10 @@ public class Game : MonoBehaviour
     private static int stageLv_;
     private List<int[]> blockList = new List<int[]>();
     private static bool stage1 = true;
+    //新要素
+    static int BarColorFlag = 0;
+    static int BallColoerFlag = 0;
+
 
 
 
@@ -137,25 +144,6 @@ public class Game : MonoBehaviour
 
     }
 
-    public void CreateItem( Vector2 position ){
-      //どのアイテムが落ちるかを抽選　今の出現率は平等
-      int randomItemNo = UnityEngine.Random.Range( 0, itemPrefabs_.Length );
-      GameObject itemPrefab = itemPrefabs_[randomItemNo];
-
-      GameObject newItem = Instantiate( itemPrefab );
-
-      var transform = newItem.GetComponent<RectTransform>();
-      transform.SetParent( items_,false );
-
-      transform.position = position;
-    }
-
-
-    //一機増える　それだけ
-    public void OneUp(){
-      ++life;
-    }
-
   //Score処理
     public void Addscore( int score ){
       score_ += score;
@@ -184,9 +172,39 @@ public class Game : MonoBehaviour
         }
     }
 
+
+    public void CreateItem( Vector2 position ){
+      //どのアイテムが落ちるかを抽選　今の出現率は平等
+      int randomItemNo = UnityEngine.Random.Range( 0, itemPrefabs_.Length );
+      GameObject itemPrefab = itemPrefabs_[randomItemNo];
+
+      GameObject newItem = Instantiate( itemPrefab );
+
+      var transform = newItem.GetComponent<RectTransform>();
+      transform.SetParent( items_,false );
+
+      transform.position = position;
+    }
+
+    //一機増える　それだけ
+    public void OneUp(){
+      ++life;
+    }
+    //ボールが増える,このボールは落ちてもMissにならない
     public static void SpownSubBall(){
       var subBall = Instantiate<GameObject>(SubBallprefab,Balls);
-
     }
+
+    // public void BarColorChange(){
+    //   var BarImage = BarObj_.GetComponent<Image>();
+    //
+    //   if(BarColorFlag == 0){
+    //     BarImage.color = new Color(0f,0f,0f);
+    //     BarColorFlag = 1;
+    //   }else{
+    //     BarImage.color = new Color(1f,1f,1f);
+    //     BarColorFlag = 0;
+    //   }
+    // }
 
   }
