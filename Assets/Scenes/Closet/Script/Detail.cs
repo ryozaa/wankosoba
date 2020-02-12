@@ -10,13 +10,17 @@ public class Detail : MonoBehaviour
     public ClosetSobako sobako;
     public Image background;
     public Clothes clothe;
+    public Text coinLabel;
     private Text buttonText;
     private Text descText;
+    private int coins;
     
     void Start() {
         button.onClick.AddListener(OnClickButton);
         buttonText = button.transform.Find("Text").GetComponent<Text>();
         descText = transform.Find("Desc").GetComponent<Text>();
+        coins = PlayerPrefCtrl.loadCoins();
+        coinLabel.text = coins.ToString();
         if (HomeBG.sprite != null) background.sprite = HomeBG.sprite;
         SetClothe(clothe);
     }
@@ -30,6 +34,14 @@ public class Detail : MonoBehaviour
 
     void OnClickButton() {
         if (clothe.isLock) {
+            // if (clothe.price < coins) {
+            //     coins -= clothe.price;
+            //     PlayerPrefCtrl.SaveCoins(coins);
+            //     coinLabel.text = coins.ToString();
+
+            //     clothe.SetIsLock(false);
+            //     UpdateButton();
+            // }
             clothe.SetIsLock(false);
             UpdateButton();
             return;

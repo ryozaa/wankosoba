@@ -17,17 +17,18 @@ public class HomeSobako : MonoBehaviour
     public SliderManager sliderManager;
     public MenuManager menuManager;
     public Animator frameAnimator;
+    public Text nameFrame;
     private Animator animator;
     private Dictionary<string, string> textDict;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        nameFrame.text = PlayerPrefs.GetString("CHARACTER_NAME", "そばこ");
 
         textDict = new Dictionary<string, string>();
         textDict.Add("どうかしましたか？", "疑問");
         textDict.Add("なんですか？", "疑問");
-        textDict.Add("えへへ、もっとなでなでしてください……♪", "照れる1");
         textDict.Add("わっ！びっくりしました……", "驚く");
         textDict.Add("っ！な、なにも隠してないですよー", "目そらし");
         textDict.Add("あ、あんまり見られると照れちゃいます……", "照れ困");
@@ -38,9 +39,22 @@ public class HomeSobako : MonoBehaviour
         textDict.Add("えへへ♪マスターとたくさんお話できてうれしいです！", "笑顔2");
         textDict.Add("今日もたくさんいい事があるといいですね！", "笑顔3");
         textDict.Add("音楽を聴くとつい踊りたくなっちゃいます♪", "ルンルン");
-        textDict.Add("ええと、今日の予定はっと……", "ねむい");
         textDict.Add("明日はなにをしようかな～？", "ルンルン");
 
+        foreach (var data in TodoTable.FindAll().Rows) {
+            if ((int)data["status"] == 0) {
+                textDict.Add($"『{(string)data["title"]}』はもう終わりましたか？", "笑顔1");
+            }
+        }
+
+        var date = DateTime.Now;
+        foreach (var data in ScheduleTable.FindByDate(date.ToString("yyyy-MM-dd")).Rows) {
+            textDict.Add($"今日は『{(string)data["title"]}』の予定がありますよ！", "笑顔1");
+        }
+        date.AddDays(1);
+        foreach (var data in ScheduleTable.FindByDate(date.ToString("yyyy-MM-dd")).Rows) {
+            textDict.Add($"明日は『{(string)data["title"]}』の予定がありますよ！", "笑顔1");
+        }
         StartCoroutine(Test());
     }
 

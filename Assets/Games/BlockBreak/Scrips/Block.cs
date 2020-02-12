@@ -39,7 +39,7 @@ public class Block : MonoBehaviour
         game.Addscore( 100 );
         //アイテムの出現確率は20%
         int randomValue = Random.Range(0,100);
-        if(randomValue < 20){
+        if(randomValue < 50){
         game.CreateItem( transform.position );
         }
         //ブロックの消滅

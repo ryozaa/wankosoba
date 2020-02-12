@@ -14,6 +14,6 @@ public class GSButtonManager : MonoBehaviour
     {
         backButton.onClick.AddListener(() => SceneManager.LoadScene("Home"));
         shootingButton.onClick.AddListener(() => SceneManager.LoadScene("SobaShooting"));
-        blockButton.onClick.AddListener(() => SceneManager.LoadScene("BBTitle"));
+        blockButton.onClick.AddListener(() => SceneManager.LoadScene("BBTitleScene"));
     }
 }
